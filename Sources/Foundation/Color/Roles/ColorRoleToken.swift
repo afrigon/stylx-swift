@@ -1,4 +1,4 @@
-enum ColorRoleToken {
+public enum ColorRoleToken {
     case emphasis
     case muted
     case foreground

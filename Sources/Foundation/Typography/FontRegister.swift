@@ -1,7 +1,7 @@
 import SwiftUI
 
-class FontRegister {
-    static let shared: FontRegister = .init()
+public class FontRegister {
+    public static let shared: FontRegister = .init()
     
     private var registered: Set<String> = .init()
     

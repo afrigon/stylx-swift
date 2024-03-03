@@ -46,7 +46,7 @@ public struct ColorRole {
         self.borderMuted = borderMuted ?? muted
     }
     
-    func resolve(
+    public func resolve(
         token: ColorRoleToken,
         scheme: ColorScheme,
         contrast: ColorSchemeContrast
