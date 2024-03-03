@@ -5,7 +5,7 @@ public enum ButtonFormat {
     case circle
     case square
     
-    var clipShape: AnyShape {
+    public var clipShape: AnyShape {
         switch self {
             case .regular:
                 AnyShape(.defaultRoundedRectangle)
