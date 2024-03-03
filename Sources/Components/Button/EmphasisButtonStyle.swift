@@ -29,7 +29,7 @@ public struct EmphasisButtonStyle: ButtonStyle {
             .lineLimit(1)
             .textStyle(scale.textStyle)
             .padding(.vertical, scale.verticalPadding)
-            .padding(.horizontal, format == .regular ? scale.horizontalPadding : scale.verticalPadding)
+            .padding(.horizontal, format == .regular || format == .capsule ? scale.horizontalPadding : scale.verticalPadding)
             .modify(if: isLoading) { view in
                 view
                     .foregroundStyle(.clear)

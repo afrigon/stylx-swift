@@ -33,6 +33,13 @@ struct ButtonsView<S: ButtonStyle>: View {
                     .disabled(true)
                     .loading(true)
                 
+                ButtonView { Button(text) {} } style: { style($0, .capsule) }
+                ButtonView { Button(text) {} } style: { style($0, .capsule) }
+                    .disabled(true)
+                ButtonView { Button(text) {} } style: { style($0, .capsule) }
+                    .disabled(true)
+                    .loading(true)
+                
                 ButtonView { Button(action: {}, label: { Image(systemName: icon) }) } style: { style($0, .square) }
                 ButtonView { Button(action: {}, label: { Image(systemName: icon) }) } style: { style($0, .square) }
                     .disabled(true)
