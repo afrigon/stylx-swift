@@ -118,11 +118,7 @@ public struct Palette {
             return .white
         }
         
-        let r = Double(value >> 16 & 0xff) / 255
-        let g = Double(value >> 8 & 0xff) / 255
-        let b = Double(value & 0xff) / 255
-        
-        return Color(red: r, green: g, blue: b)
+        return Color(hex: value)
     }
 }    
 
