@@ -5,8 +5,8 @@ public struct Card<Content: View>: View {
     
     public var body: some View {
         content()
-            .background(.backgroundMuted)
-            .clipShape(.doubleRoundedRectangle)
+            .background(.backgroundDefault)
+            .clipShape(RoundedRectangle(cornerRadius: .l))
             .shadow(radius: .default)
     }
 }

@@ -9,7 +9,7 @@ struct BorderColor {
     
     static let `default`: BorderColor = .init(
         default: .init(light: .gray.value2),
-        emphasis: .init(light: .gray.value4),
+        emphasis: .init(light: .gray.value3),
         muted: .init(light: .gray.value1),
         disabled: .init(light: .gray.value3),
         transparent: .init(light: .clear, dark: .clear)

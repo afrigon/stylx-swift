@@ -10,7 +10,7 @@ struct BackgroundColor {
     
     static let `default`: BackgroundColor = .init(
         default: .init(light: .gray.value0, dark: .gray.value7),
-        emphasis: .init(light: .gray.value4),
+        emphasis: .init(light: .gray.value2),
         muted: .init(light: .gray.value1),
         disabled: .init(light: .gray.value3),
         transparent: .init(light: .clear, dark: .clear),

@@ -52,21 +52,9 @@ public struct Separator<S: ShapeStyle>: View {
 }
 
 #Preview {
-    VStack {
-        HStack {
-            Separator(direction: .vertical, size: .large, color: .borderEmphasis)
-            Separator(direction: .vertical, size: .emphasis, color: .borderEmphasis)
-            Separator(direction: .vertical, size: .default, color: .borderEmphasis)
-        }
-        
+    VStack(spacing: .l) {
         Separator(direction: .horizontal, size: .default, color: .borderEmphasis)
         Separator(direction: .horizontal, size: .emphasis, color: .borderEmphasis)
         Separator(direction: .horizontal, size: .large, color: .borderEmphasis)
-        
-        HStack {
-            Separator(direction: .vertical, size: .default, color: .borderEmphasis)
-            Separator(direction: .vertical, size: .emphasis, color: .borderEmphasis)
-            Separator(direction: .vertical, size: .large, color: .borderEmphasis)
-        }
     }
 }

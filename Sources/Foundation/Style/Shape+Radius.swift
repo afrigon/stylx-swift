@@ -14,15 +14,18 @@ extension Shape where Self == RoundedRectangle {
         RoundedRectangle(cornerRadius: Radius.double.value)
     }
     
-    /// Full radius
-    /// A shape with the full radius applied.
-    public static var full: RoundedRectangle {
-        RoundedRectangle(cornerRadius: Radius.full.value)
-    }
-    
     /// Border radius
     /// A shape with the border radius applied.
     public static func border(_ border: Border) -> RoundedRectangle {
         RoundedRectangle(cornerRadius: border.value)
+    }
+}
+
+extension Shape where Self == Capsule {
+    
+    /// Full radius
+    /// A shape with the full radius applied.
+    public static var full: Capsule {
+        Capsule()
     }
 }

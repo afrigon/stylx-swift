@@ -13,7 +13,7 @@ public struct Badge: View {
             .foregroundStyle(.roleForeground)
             .clipShape(.full)
             .overlay {
-                RoundedRectangle.full
+                Capsule()
                     .stroke(style: .default)
                     .foregroundStyle(.roleBorderMuted)
             }

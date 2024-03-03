@@ -2,8 +2,8 @@ import SwiftUI
 
 public enum ButtonScale {
     case xs
-    case s(TextScale)
-    case m(TextScale)
+    case s
+    case m
     case l
     
     var progressSize: ControlSize {
@@ -21,34 +21,38 @@ public enum ButtonScale {
         switch self {
             case .xs:
                 .overline
-            case .s(let scale), .m(let scale):
-                .body(scale, .bold)
+            case .s:
+                .body(.s, .bold)
+            case .m:
+                .body(.l, .bold)
             case .l:
                 .subtitle
         }
     }
-    
+
+    var verticalPadding: CGFloat {
+        switch self {
+            case .xs:
+                .xs
+            case .s:
+                .xs
+            case .m:
+                .s
+            case .l:
+                .m
+        }
+    }
+
     var horizontalPadding: CGFloat {
         switch self {
             case .xs:
+                .xs
+            case .s:
                 .s
-            case .s, .m:
+            case .m:
                 .m
             case .l:
                 .l
-        }
-    }
-    
-    var height: CGFloat {
-        switch self {
-            case .xs:
-                22
-            case .s:
-                28
-            case .m:
-                36
-            case .l:
-                48
         }
     }
 }
