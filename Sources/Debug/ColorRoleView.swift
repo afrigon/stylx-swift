@@ -3,6 +3,8 @@ import SwiftUI
 public struct ColorRoleView: View {
     @Environment(\.colorRole) var colorRole
     
+    public init() {}
+    
     public var body: some View {
         VStack(alignment: .leading) {
             ColorView(text: "Emphasis", style: .roleEmphasis, type: .background)
