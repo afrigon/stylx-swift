@@ -5,7 +5,7 @@ private struct ColorRoleKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-    var colorRole: ColorRole {
+    public var colorRole: ColorRole {
         get { self[ColorRoleKey.self] }
         set { self[ColorRoleKey.self] = newValue }
     }

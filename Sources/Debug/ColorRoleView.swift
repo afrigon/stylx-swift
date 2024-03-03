@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct ColorRoleView: View {
+public struct ColorRoleView: View {
     @Environment(\.colorRole) var colorRole
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             ColorView(text: "Emphasis", style: .roleEmphasis, type: .background)
             ColorView(text: "Muted", style: .roleMuted, type: .background)
