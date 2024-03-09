@@ -151,6 +151,14 @@ struct TextStyleModifier: ViewModifier {
     }
 }
 
+extension Text {
+    
+    /// note: this fonction will not apply text case to preseve the text type
+    public func textStyle(_ textStyle: TextStyle, scaled: Bool = true) -> Text {
+        font(scaled ? textStyle.scaledFont : textStyle.font)
+    }
+}
+
 extension View {
     public func textStyle(_ textStyle: TextStyle, scaled: Bool = true) -> some View {
         modifier(TextStyleModifier(textStyle: textStyle, scaled: scaled))
