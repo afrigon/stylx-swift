@@ -33,8 +33,8 @@ extension View {
         #endif
     }
 
-    /// Sets the display mode for this view when applicable.
-    public func displayMode(
+    /// Sets the title display mode for this view when applicable.
+    public func titleDisplayMode(
         _ displayMode: TitleDisplayMode = .automatic
     ) -> some View {
         self
