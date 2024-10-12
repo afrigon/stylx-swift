@@ -9,7 +9,7 @@ public enum TextWeight {
     case regular
     case bold
     
-    var value: Font.Weight {
+    public var value: Font.Weight {
         switch self {
             case .regular:
                     .regular
