@@ -1,9 +1,9 @@
 import SwiftUI
 
 extension Font {
-    static func monaspace(size: CGFloat, weight: Weight = .regular) -> Font {
+    public static func monaspace(size: CGFloat, weight: Weight = .regular) -> Font {
         FontRegister.shared.register(fontName: "MonaspaceNeonFlex")
-        
+
         return VariableFont.create(
             name: "Monaspace Neon Var",
             size: size,

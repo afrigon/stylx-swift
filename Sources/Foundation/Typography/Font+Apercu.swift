@@ -2,9 +2,9 @@ import SwiftUI
 import CoreText
 
 extension Font {
-    static func apercu(size: CGFloat, weight: Weight = .regular) -> Font {
+    public static func apercu(size: CGFloat, weight: Weight = .regular) -> Font {
         FontRegister.shared.register(fontName: "ApercuFlex")
-        
+
         return VariableFont.create(
             name: "Apercu Pro",
             size: size,
