@@ -32,4 +32,14 @@ extension View {
             .navigationBarTitleDisplayMode(displayMode.navigationBarTitleDisplayMode)
         #endif
     }
+
+    /// Sets the display mode for this view when applicable.
+    public func displayMode(
+        _ displayMode: TitleDisplayMode = .automatic
+    ) -> some View {
+        self
+        #if os(iOS) || os(watchOS) || os(visionOS) || targetEnvironment(macCatalyst)
+            .navigationBarTitleDisplayMode(displayMode.navigationBarTitleDisplayMode)
+        #endif
+    }
 }
