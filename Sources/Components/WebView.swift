@@ -1,7 +1,8 @@
+#if canImport(WebKit)
 import SwiftUI
 import WebKit
 
-#if canImport(UIKit) && !os(tvOS)
+#if canImport(UIKit)
 public struct WebView: UIViewRepresentable {
     let url: URL
 
@@ -18,7 +19,7 @@ public struct WebView: UIViewRepresentable {
         webView.load(request)
     }
 }
-#endif
+#endif // canImport(UIKit)
 
 #if canImport(AppKit)
 public struct WebView: NSViewRepresentable {
@@ -37,4 +38,6 @@ public struct WebView: NSViewRepresentable {
         webView.load(request)
     }
 }
-#endif
+#endif // canImport(AppKit)
+
+#endif // canImport(WebKit)
