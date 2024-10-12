@@ -5,7 +5,7 @@ private struct LoadingKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-    var isLoading: Bool {
+    public var isLoading: Bool {
         get { self[LoadingKey.self] }
         set { self[LoadingKey.self] = newValue }
     }

@@ -37,4 +37,32 @@ extension CGFloat {
     
     /// 80px spacing
     public static var xxxxxl: CGFloat   = 80
+
+    /// 128px spacing
+    public static var xxxxxxl: CGFloat   = 128
+
+    /// multiplatform spacing
+    public init(
+        _ value: CGFloat,
+        iOS: CGFloat? = nil, 
+        macOS: CGFloat? = nil, 
+        macCatalyst: CGFloat? = nil, 
+        tvOS: CGFloat? = nil, 
+        watchOS: CGFloat? = nil, 
+        visionOS: CGFloat? = nil
+    ) {
+        #if targetEnvironment(macCatalyst)
+        self = macCatalyst ?? iOS ?? value
+        #elseif os(iOS)
+        self = iOS ?? value
+        #elseif os(macOS)
+        self = macOS ?? value
+        #elseif os(tvOS)
+        self = tvOS ?? value
+        #elseif os(watchOS)
+        self = watchOS ?? value
+        #elseif os(visionOS)
+        self = visionOS ?? value
+        #endif    
+    }
 }
