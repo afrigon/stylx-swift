@@ -50,8 +50,10 @@ public struct DefaultButtonStyle: ButtonStyle {
             .modify(if: isLoading) { view in
                 view.overlay {
                     ProgressView()
-                        .controlSize(scale.progressSize)
                         .tint(ForegroundShapeStyle.foregroundDisabled)
+#if !os(tvOS)
+                        .controlSize(scale.progressSize)
+#endif
                 }
             }
             .clipShape(format.clipShape)
