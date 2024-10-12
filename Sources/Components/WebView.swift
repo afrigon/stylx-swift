@@ -1,7 +1,7 @@
 import SwiftUI
 import WebKit
 
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(tvOS)
 public struct WebView: UIViewRepresentable {
     let url: URL
 
