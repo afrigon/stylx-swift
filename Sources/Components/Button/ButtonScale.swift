@@ -7,7 +7,7 @@ public enum ButtonScale {
     case l
     
 #if !os(tvOS)
-    var progressSize: ControlSize {
+    public var progressSize: ControlSize {
         switch self {
             case .xs, .s:
                 .mini
@@ -19,7 +19,7 @@ public enum ButtonScale {
     }
 #endif
     
-    var textStyle: TextStyle {
+    public var textStyle: TextStyle {
         switch self {
             case .xs:
                 .overline
@@ -32,7 +32,7 @@ public enum ButtonScale {
         }
     }
 
-    var verticalPadding: CGFloat {
+    public var verticalPadding: CGFloat {
         switch self {
             case .xs:
                 .xs
@@ -45,7 +45,7 @@ public enum ButtonScale {
         }
     }
 
-    var horizontalPadding: CGFloat {
+    public var horizontalPadding: CGFloat {
         switch self {
             case .xs:
                 .xs
