@@ -38,8 +38,11 @@ extension CGFloat {
     /// 80px spacing
     public static var xxxxxl: CGFloat   = 80
 
+    /// 96px spacing
+    public static var xxxxxxl: CGFloat   = 96
+
     /// 128px spacing
-    public static var xxxxxxl: CGFloat   = 128
+    public static var xxxxxxxl: CGFloat   = 128
 
     /// multiplatform spacing
     public init(
