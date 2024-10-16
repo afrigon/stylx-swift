@@ -37,6 +37,18 @@ extension View {
         #endif
     }
 
+    /// Sets the title and display mode for this view when applicable.
+    public func title(
+        verbatim title: String,
+        displayMode: TitleDisplayMode = .automatic
+    ) -> some View {
+        self
+            .navigationTitle(title)
+        #if os(iOS) || os(watchOS) || os(visionOS) || targetEnvironment(macCatalyst)
+            .navigationBarTitleDisplayMode(displayMode.navigationBarTitleDisplayMode)
+        #endif
+    }
+
     /// Sets the title display mode for this view when applicable.
     public func titleDisplayMode(
         _ displayMode: TitleDisplayMode = .automatic
