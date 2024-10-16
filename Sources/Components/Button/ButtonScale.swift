@@ -6,7 +6,7 @@ public enum ButtonScale {
     case m
     case l
     
-#if !os(tvOS)
+    @available(tvOS, unavailable)
     public var progressSize: ControlSize {
         switch self {
             case .xs, .s:
@@ -17,7 +17,6 @@ public enum ButtonScale {
                 .regular
         }
     }
-#endif
     
     public var textStyle: TextStyle {
         switch self {
