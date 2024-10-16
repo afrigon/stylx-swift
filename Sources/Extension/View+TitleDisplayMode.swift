@@ -14,8 +14,10 @@ public enum TitleDisplayMode {
             return .automatic
         case .inline:
             return .inline
+#if !os(tvOS)
         case .large:
             return .large
+#endif
         }
     }
 #endif
