@@ -3,6 +3,8 @@ import SwiftUI
 public enum TitleDisplayMode {
     case automatic
     case inline
+
+    @available(tvOS, unavailable)
     case large
 
 #if canImport(UIKit)
