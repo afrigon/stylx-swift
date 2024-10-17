@@ -13,6 +13,8 @@ public typealias PlatformImage = NSImage
 import SwiftUI
 
 extension Image {
+
+    @MainActor
     public init(platformImage: PlatformImage) {
 #if canImport(UIKit)
         self = Image(uiImage: platformImage)
@@ -22,7 +24,9 @@ extension Image {
     }
 }
 
-extension ImageResource where Content == View {
+extension ImageRenderer {
+
+    @MainActor
     public var platformImage: PlatformImage? {
 #if canImport(UIKit)
         return uiImage
