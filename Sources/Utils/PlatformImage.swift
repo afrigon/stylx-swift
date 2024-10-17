@@ -22,7 +22,7 @@ extension Image {
     }
 }
 
-extension ImageResource {
+extension ImageResource where Content == View {
     public var platformImage: PlatformImage? {
 #if canImport(UIKit)
         return uiImage
