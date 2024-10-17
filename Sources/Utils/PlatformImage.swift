@@ -61,3 +61,15 @@ extension UIImage {
 }
 #endif
 
+extension Data {
+
+    @MainActor
+    public init?(image: ImageResource) {
+        guard let data = PlatformImage(resource: image).data() else {
+            return nil
+        }
+
+        self = data
+    }
+}
+
