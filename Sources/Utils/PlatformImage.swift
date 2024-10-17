@@ -15,6 +15,11 @@ import SwiftUI
 extension Image {
 
     @MainActor
+    public init(data: Data) {
+        self = Image(platformImage: PlatformImage(data: data) ?? PlatformImage())
+    }
+
+    @MainActor
     public init(platformImage: PlatformImage) {
 #if canImport(UIKit)
         self = Image(uiImage: platformImage)
@@ -35,4 +40,24 @@ extension ImageRenderer {
 #endif
     }
 }
+
+#if canImport(AppKit)
+extension NSImage {
+
+    @MainActor
+    public func data() -> Data? {
+        tiffRepresentation
+    }
+}
+#endif
+
+#if canImport(UIKit)
+extension UIImage {
+
+    @MainActor
+    public func data() -> Data? {
+        pngData()
+    }
+}
+#endif
 
