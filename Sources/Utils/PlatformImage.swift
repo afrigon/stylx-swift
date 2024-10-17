@@ -12,6 +12,16 @@ public typealias PlatformImage = NSImage
 
 import SwiftUI
 
+extension Image {
+    public init(platformImage: PlatformImage) {
+#if canImport(UIKit)
+        self = Image(uiImage: platformImage)
+#elseif canImport(AppKit)
+        self = Image(nsImage: platformImage)
+#endif
+    }
+}
+
 extension ImageResource {
     public var platformImage: PlatformImage? {
 #if canImport(UIKit)
