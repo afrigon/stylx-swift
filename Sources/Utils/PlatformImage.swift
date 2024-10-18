@@ -54,6 +54,7 @@ extension NSImage {
 #if canImport(UIKit)
 extension UIImage {
 
+    @MainActor
     public convenience init(cgImage: CGImage, size: CGSize) {
         self.init(cgImage: cgImage)
     }
