@@ -55,7 +55,7 @@ extension NSImage {
 extension UIImage {
 
     public convenience init(cgImage: CGImage, size: CGSize) {
-        .init(cgImage: cgImage)
+        UIImage(cgImage: cgImage)
     }
 
     @MainActor
