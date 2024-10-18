@@ -54,6 +54,10 @@ extension NSImage {
 #if canImport(UIKit)
 extension UIImage {
 
+    public convenience init(cgImage: CGImage, size: CGSize) {
+        .init(cgImage: cgImage)
+    }
+
     @MainActor
     public func data() -> Data? {
         pngData()
