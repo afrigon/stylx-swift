@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct Skeleton: View {
-    enum Scale {
+    public enum Scale {
         case s
         case l
         
@@ -21,7 +21,7 @@ public struct Skeleton: View {
         self.init(scale: .l)
     }
     
-    init(scale: Scale) {
+    public init(scale: Scale) {
         self.scale = scale
     }
     
