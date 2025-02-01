@@ -1,6 +1,10 @@
 import SwiftUI
 
 public struct SkeletonParagraph: View {
+    public init() {
+
+    }
+
     public var body: some View {
         createView(.foreground)
             .shimmering(width: 1.5)
