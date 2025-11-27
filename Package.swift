@@ -1,15 +1,15 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.2
 import PackageDescription
 
 let package = Package(
     name: "stylx",
     platforms: [
-        .iOS(.v17),
-        .macOS(.v14),
-        .macCatalyst(.v17),
-        .watchOS(.v10),
-        .tvOS(.v17),
-        .visionOS(.v1)
+        .iOS(.v26),
+        .macOS(.v26),
+        .macCatalyst(.v26),
+        .watchOS(.v26),
+        .tvOS(.v26),
+        .visionOS(.v26)
     ],
     products: [
         .library(name: "stylx", targets: ["stylx"])
