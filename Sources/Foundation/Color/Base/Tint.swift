@@ -1,4 +1,4 @@
-enum Tint: CaseIterable {
+enum Tint: CaseIterable, Sendable {
     case value0
     case value1
     case value2

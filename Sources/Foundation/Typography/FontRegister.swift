@@ -1,5 +1,6 @@
 import SwiftUI
 
+@MainActor
 public class FontRegister {
     public static let shared: FontRegister = .init()
     
@@ -10,15 +11,10 @@ public class FontRegister {
             return
         }
         
-        guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension),
-            let dataProvider = CGDataProvider(url: fontURL as CFURL),
-            let font = CGFont(dataProvider) else {
-            print("Couldn't create font from: \(fontName).\(fontExtension)")
-            return
-        }
-
         var error: Unmanaged<CFError>?
-        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+        let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension)
+        
+        guard let fontURL, CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error) else {
             print("Couldn't create font from: \(fontName).\(fontExtension)")
             return
         }

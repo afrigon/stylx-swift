@@ -1,4 +1,4 @@
-enum Hue: CaseIterable, Hashable {
+enum Hue: CaseIterable, Hashable, Sendable {
     case lime
     case red
     case orange

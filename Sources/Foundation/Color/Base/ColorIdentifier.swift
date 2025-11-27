@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ColorIdentifier: Hashable {
+public struct ColorIdentifier: Hashable, Sendable {
     let hue: Hue
     let tint: Tint
     

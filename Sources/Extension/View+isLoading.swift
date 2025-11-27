@@ -1,7 +1,7 @@
 import SwiftUI
 
 private struct LoadingKey: EnvironmentKey {
-    static var defaultValue: Bool = false
+    static let defaultValue: Bool = false
 }
 
 extension EnvironmentValues {

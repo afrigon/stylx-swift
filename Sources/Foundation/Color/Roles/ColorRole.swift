@@ -1,7 +1,7 @@
 import SwiftUI
 
 private struct ColorRoleKey: EnvironmentKey {
-    static var defaultValue: ColorRole = .neutral
+    static let defaultValue: ColorRole = .neutral
 }
 
 extension EnvironmentValues {
@@ -11,7 +11,7 @@ extension EnvironmentValues {
     }
 }
 
-public struct ColorRole {
+public struct ColorRole: Sendable {
     private let emphasis: ThemedColor
     private let muted: ThemedColor
     private let foreground: ThemedColor

@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ThemedColor {
+public struct ThemedColor: Sendable {
     private let light: Color
     private let dark: Color
     private let lightIncreasedContrast: Color

@@ -1,11 +1,11 @@
 import SwiftUI
 
-public enum TextScale {
+public enum TextScale: Sendable {
     case s
     case l
 }
 
-public enum TextWeight {
+public enum TextWeight: Sendable {
     case regular
     case bold
     
@@ -19,7 +19,7 @@ public enum TextWeight {
     }
 }
 
-public enum TextStyle {
+public enum TextStyle: Sendable {
     case heading1
     case heading2
     case heading3
@@ -93,6 +93,7 @@ public enum TextStyle {
     }
     #endif
     
+    @MainActor
     var font: Font {
         switch self {
             case .heading1, .heading2, .heading3:
@@ -108,6 +109,7 @@ public enum TextStyle {
         }
     }
     
+    @MainActor
     var scaledFont: Font {
         switch self {
             case .heading1, .heading2, .heading3:
@@ -154,12 +156,15 @@ struct TextStyleModifier: ViewModifier {
 extension Text {
     
     /// note: this fonction will not apply text case to preseve the text type
+    @MainActor
     public func textStyle(_ textStyle: TextStyle, scaled: Bool = true) -> Text {
         font(scaled ? textStyle.scaledFont : textStyle.font)
     }
 }
 
 extension View {
+    
+    @MainActor
     public func textStyle(_ textStyle: TextStyle, scaled: Bool = true) -> some View {
         modifier(TextStyleModifier(textStyle: textStyle, scaled: scaled))
     }
