@@ -3,46 +3,46 @@ import Foundation
 extension CGFloat {
     
     /// 1px spacing
-    public static var xxxxs: CGFloat    = 1
+    public static let xxxxs: CGFloat    = 1
     
     /// 2px spacing
-    public static var xxxs: CGFloat     = 2
+    public static let xxxs: CGFloat     = 2
     
     /// 4px spacing
-    public static var xxs: CGFloat      = 4
+    public static let xxs: CGFloat      = 4
     
     /// 8px spacing
-    public static var xs: CGFloat       = 8
+    public static let xs: CGFloat       = 8
     
     /// 12px spacing
-    public static var s: CGFloat        = 12
+    public static let s: CGFloat        = 12
     
     /// 16px spacing
-    public static var m: CGFloat        = 16
+    public static let m: CGFloat        = 16
     
     /// 24px spacing
-    public static var l: CGFloat        = 24
+    public static let l: CGFloat        = 24
     
     /// 32px spacing
-    public static var xl: CGFloat       = 32
+    public static let xl: CGFloat       = 32
     
     /// 40p spacing
-    public static var xxl: CGFloat      = 40
+    public static let xxl: CGFloat      = 40
     
     /// 48px spacing
-    public static var xxxl: CGFloat     = 48
+    public static let xxxl: CGFloat     = 48
     
     /// 64px spacing
-    public static var xxxxl: CGFloat    = 64
+    public static let xxxxl: CGFloat    = 64
     
     /// 80px spacing
-    public static var xxxxxl: CGFloat   = 80
+    public static let xxxxxl: CGFloat   = 80
 
     /// 96px spacing
-    public static var xxxxxxl: CGFloat   = 96
+    public static let xxxxxxl: CGFloat   = 96
 
     /// 128px spacing
-    public static var xxxxxxxl: CGFloat   = 128
+    public static let xxxxxxxl: CGFloat   = 128
 
     /// multiplatform spacing
     public init(
