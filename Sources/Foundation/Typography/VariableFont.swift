@@ -1,7 +1,7 @@
 import CoreText
 import SwiftUI
 
-struct VariableFont {
+public struct VariableFont {
     enum Variables: Int, CustomStringConvertible {
         case weight = 2003265652
         case width = 2003072104
@@ -62,7 +62,7 @@ struct VariableFont {
         return CTFontCreateWithFontDescriptor(descriptor, size, nil)
     }
     
-    static func create(name: String, size: CGFloat, weight: Font.Weight) -> Font {
+    public static func create(name: String, size: CGFloat, weight: Font.Weight) -> Font {
         Font(createCTFont(name: name, size: size, weight: weight))
     }
 }

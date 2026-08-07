@@ -6,7 +6,7 @@ public class FontRegister {
     
     private var registered: Set<String> = .init()
     
-    func register(bundle: Bundle = .module, fontName: String, fontExtension: String = "ttf") {
+    public func register(bundle: Bundle = .main, fontName: String, fontExtension: String = "ttf") {
         if registered.contains(fontName) {
             return
         }

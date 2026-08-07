@@ -15,11 +15,6 @@ let package = Package(
         .library(name: "stylx", targets: ["stylx"])
     ],
     targets: [
-        .target(
-            name: "stylx",
-            resources: [
-                .process("Resources")
-            ]
-        )
+        .target(name: "stylx")
     ]
 )

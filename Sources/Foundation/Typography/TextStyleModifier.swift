@@ -93,35 +93,16 @@ public enum TextStyle: Sendable {
     }
     #endif
     
-    @MainActor
-    var font: Font {
+    var weight: Font.Weight {
         switch self {
             case .heading1, .heading2, .heading3:
-                .apercu(size: size, weight: .medium)
+                .medium
             case .subtitle, .overline:
-                .apercu(size: size, weight: .bold)
-            case .disclaimer:
-                .apercu(size: size, weight: .regular)
+                .bold
+            case .disclaimer, .code:
+                .regular
             case .body(_, let weight):
-                .apercu(size: size, weight: weight.value)
-            case .code:
-                .monaspace(size: size, weight: .regular)
-        }
-    }
-    
-    @MainActor
-    var scaledFont: Font {
-        switch self {
-            case .heading1, .heading2, .heading3:
-                .apercu(size: scaledSize, weight: .medium)
-            case .subtitle, .overline:
-                .apercu(size: scaledSize, weight: .bold)
-            case .disclaimer:
-                .apercu(size: scaledSize, weight: .regular)
-            case .body(_, let weight):
-                .apercu(size: scaledSize, weight: weight.value)
-            case .code:
-                .monaspace(size: scaledSize, weight: .regular)
+                weight.value
         }
     }
     
@@ -137,34 +118,25 @@ public enum TextStyle: Sendable {
 
 struct TextStyleModifier: ViewModifier {
     @Environment(\.dynamicTypeSize) var dynamicTextSize
-    
+    @Environment(\.textRole) var textRole
+
     let textStyle: TextStyle
     let scaled: Bool
-    
+
     init(textStyle: TextStyle, scaled: Bool) {
         self.textStyle = textStyle
         self.scaled = scaled
     }
-    
+
     func body(content: Content) -> some View {
         content
-            .font(scaled ? textStyle.scaledFont : textStyle.font)
+            .font(textRole.resolve(style: textStyle, scaled: scaled))
             .textCase(textStyle.textCase)
     }
 }
 
-extension Text {
-    
-    /// note: this fonction will not apply text case to preseve the text type
-    @MainActor
-    public func textStyle(_ textStyle: TextStyle, scaled: Bool = true) -> Text {
-        font(scaled ? textStyle.scaledFont : textStyle.font)
-    }
-}
-
 extension View {
-    
-    @MainActor
+
     public func textStyle(_ textStyle: TextStyle, scaled: Bool = true) -> some View {
         modifier(TextStyleModifier(textStyle: textStyle, scaled: scaled))
     }
